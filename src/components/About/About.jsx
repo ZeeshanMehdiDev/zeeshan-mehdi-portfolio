@@ -29,6 +29,7 @@ const About = () => {
                 'App Developer',
                 'Software Engineer',
                 'Medusajs 2.0 Developer',
+                'Level 1 Seller on Fiverr',
                 'Coder',
               ]}
               speed={100}

@@ -30,12 +30,10 @@ import figmaLogo from './assets/tech_logo/figma.png';
 import netlifyLogo from './assets/tech_logo/netlify.png';
 import vercelLogo from './assets/tech_logo/vercel.png';
 import postgreLogo from './assets/tech_logo/postgre.png';
-import csharpLogo from './assets/tech_logo/csharp.png';
+import fiverrLogo from './assets/tech_logo/fiverr.png';
 
 // Experience Section Logo's
-import webverseLogo from './assets/company_logo/webverse_logo.png';
-import agcLogo from './assets/company_logo/agc_logo.png';
-import newtonschoolLogo from './assets/company_logo/newtonschool_logo.png';
+import kakushinLogo from './assets/company_logo/kakushin.png';
 
 // Education Section Logo's
 import glaLogo from './assets/education_logo/gla_logo.png';
@@ -111,57 +109,45 @@ export const SkillsInfo = [
   export const experiences = [
     {
       id: 0,
-      img: webverseLogo,
-      role: "Fullstack Developer",
-      company: "Webverse Digital",
-      date: "April 2024 - Present",
-      desc: "Developed dynamic and scalable web applications using the MERN stack, handling both frontend and backend development. Collaborated with cross-functional teams to build responsive UI, implement RESTful APIs, and optimize application performance in an agile environment.",
+      img: fiverrLogo,
+      role: "Full-Stack Medusajs Developer",
+      company: "Fiverr",
+      date: "OCT 2022 - Present",
+      desc: " I worked on more than 20+ Medusa.js projects on the Fiverr freelance platform. I customized both the backend and frontend of these websites based on client requirements. Additionally, I can integrate any Next.js template into Medusa.js and customize its backend according to specific needs. Feel free to reach out to me!",
       skills: [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "React JS",
-        "TypeScript",
+        "Next Js",
+        "Medusa JS",
         "Node JS",
+        "TypeScript",
         "Tailwind CSS",
-        "MongoDb",
-        "Redux",
-        " Next Js",
+        "React JS",
+        "PostgreSQL"
       ],
     },
     {
       id: 1,
-      img: agcLogo,
+      img: kakushinLogo,
       role: "Fullstack Engineer",
-      company: "Agumentik Group of Companies",
-      date: "July 2023 - March 2024",
-      desc: "Contributed to innovative projects as a Fullstack Engineer, leading both frontend and backend development using technologies such as HTML, CSS, JavaScript, PHP, SQL, Bootstrap, and ReactJS. Worked closely with the team to deliver responsive, high-performance web applications and improve user experience through seamless integration of various technologies.",
+      company: "Kakushin",
+      date: "July 2023 - Present",
+      desc: "Contributed to innovative projects as a Fullstack Engineer, leading both frontend and backend development using technologies such as Nextjs, React, ReactNative, Angular, TypeScript and Node.js. I collaborated with cross-functional teams to deliver high-quality solutions that meet client requirements. I also worked on the backend using technologies like Express.js, MongoDB, and PostgreSQL. My contributions have resulted in improved user experience and enhanced website functionality. I am excited to continue contributing to the development of innovative projects as a Fullstack Engineer at Kakushin.HTML, CSS, JavaScript, PHP, SQL, Bootstrap, and ReactJS. Worked closely with the team to deliver responsive, high-performance web applications and improve user experience through seamless integration of various technologies.",
       skills: [
+        "NextJS",
         "ReactJS",
-        "Redux",
         "JavaScript",
+        "ReactNative",
+        "Angular",
+        "TypeScript",
+        "NodeJS",
+        "Express.js",
+        "MongoDB",
+        "PostgreSQL",
         "Tailwind CSS",
         "HTML",
         "CSS",
         "SQL",
       ],
-    },
-    {
-      id: 2,
-      img: newtonschoolLogo,
-      role: "Frontend Intern",
-      company: "Newton School",
-      date: "September 2021 - August 2022",
-      desc: "Worked as a Frontend Developer Intern, designing and implementing scalable UI components and responsive websites using HTML, CSS, JavaScript, Bootstrap, and Material UI. Collaborated with the design team to translate wireframes and prototypes from Figma into interactive, user-friendly web pages.",
-      skills: [
-        "HTML",
-        "CSS",
-        "Javascript",
-        "Bootstrap",
-        "Figma",
-        "Material UI",
-      ],
-    },
+    }
   ];
   
   export const education = [
