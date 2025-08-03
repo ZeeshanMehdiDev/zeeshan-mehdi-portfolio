@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube, FaGithub } from "react-icons/fa";
+import { TbBrandFiverr } from "react-icons/tb";
 
 const Footer = () => {
   // Smooth scroll function
@@ -40,6 +41,7 @@ const Footer = () => {
           {[
             { icon: <FaGithub />, link: "https://github.com/ZeeshanMehdiDev" },
             { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/zeeshanmehdi" },
+            { icon: <TbBrandFiverr />, link: "https://www.fiverr.com/mehdi_92" },
             { icon: <FaYoutube />, link: "https://www.youtube.com/@zeecoding" },
             
           ].map((item, index) => (
