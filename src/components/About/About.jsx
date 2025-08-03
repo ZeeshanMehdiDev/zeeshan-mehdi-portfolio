@@ -28,6 +28,7 @@ const About = () => {
                 'Fullstack Developer',
                 'App Developer',
                 'Software Engineer',
+                'Medusajs 2.0 Developer',
                 'Coder',
               ]}
               speed={100}
