@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { TbBrandFiverr } from "react-icons/tb";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,9 +39,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] md:px-[7vw] lg:px-[20vw] ${
-        isScrolled ? "bg-[#050414] bg-opacity-50 backdrop-blur-md shadow-md" : "bg-transparent"
-      }`}
+      className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] md:px-[7vw] lg:px-[20vw] ${isScrolled ? "bg-[#050414] bg-opacity-50 backdrop-blur-md shadow-md" : "bg-transparent"
+        }`}
     >
       <div className="text-white py-5 flex justify-between items-center">
         {/* Logo */}
@@ -57,9 +57,8 @@ const Navbar = () => {
           {menuItems.map((item) => (
             <li
               key={item.id}
-              className={`cursor-pointer hover:text-[#8245ec] ${
-                activeSection === item.id ? "text-[#8245ec]" : ""
-              }`}
+              className={`cursor-pointer hover:text-[#8245ec] ${activeSection === item.id ? "text-[#8245ec]" : ""
+                }`}
             >
               <button onClick={() => handleMenuItemClick(item.id)}>
                 {item.label}
@@ -77,6 +76,14 @@ const Navbar = () => {
             className="text-gray-300 hover:text-[#8245ec]"
           >
             <FaGithub size={24} />
+          </a>
+          <a
+            href="https://www.fiverr.com/mehdi_92"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-300 hover:text-[#8245ec]"
+          >
+            <TbBrandFiverr size={24} />
           </a>
           <a
             href="https://www.linkedin.com/in/zeeshanmehdi"
@@ -111,9 +118,8 @@ const Navbar = () => {
             {menuItems.map((item) => (
               <li
                 key={item.id}
-                className={`cursor-pointer hover:text-white ${
-                  activeSection === item.id ? "text-[#8245ec]" : ""
-                }`}
+                className={`cursor-pointer hover:text-white ${activeSection === item.id ? "text-[#8245ec]" : ""
+                  }`}
               >
                 <button onClick={() => handleMenuItemClick(item.id)}>
                   {item.label}
