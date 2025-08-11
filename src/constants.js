@@ -186,7 +186,6 @@ export const SkillsInfo = [
         "This marketplace is built with Mercurjs and Next.js. It is a marketplace for selling products, with creators serving as vendors and customers buying products. it has admin dashboard to manage vendors and customers. The platform aims to provide a seamless and user-friendly experience for sellers, customers, and administrators.",
       image: csprepLogo,
       tags: ["Medusa JS", "Next.js", "PostgreSQL", "Mercurjs", "TypeScript", "TailwindCSS"],
-      github: "https://github.com/codingmastr/CSPrep",
       webapp: "https://sookup-frontend-production.up.railway.app",
     },
     {
@@ -250,7 +249,6 @@ export const SkillsInfo = [
         "An interactive tea leaf reading app that provides users with insights based on their tea leaf patterns. Built with expo ReactNative, it offers a user-friendly interface and an engaging experience for users interested in tea leaf reading.",
       image: removebgLogo,
       tags: ["ReactNative", "Expo", "Tea Leaf Reading", "Firebase"],
-      github: "https://github.com/codingmastr/Image-Background-Remover",
       webapp: "https://play.google.com/store/apps/details?id=com.kakushin.coffee",
     },
   ];  
