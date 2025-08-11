@@ -196,8 +196,7 @@ export const SkillsInfo = [
         "A React-Native based App that provides a collection of tricky riddles for users to solve. The intuitive design and smooth experience make it a go-to app for puzzle enthusiasts.",
       image: movierecLogo,
       tags: ["ReactNative", "Expo", "Firebase"],
-      github: "https://github.com/codingmastr/Movie-Recommendation-App",
-      webapp: "https://movie-recommendation-app-jet.vercel.app/",
+      webapp: "https://play.google.com/store/apps/details?id=com.kakushin.riddl3",
     },
     {
       id: 3,
@@ -206,8 +205,7 @@ export const SkillsInfo = [
         "A comprehensive clothing size recommendation system designed to help users find their perfect fit. Built with Next.js and Medusa.js, it offers a seamless shopping experience by providing personalized size suggestions based on user inputs and preferences.",
       image: npmLogo,
       tags: ["Next.js", "Medusa.js", "E-commerce", "Personalization"],
-      github: "https://github.com/codingmastr/cmtk-email-validator",
-      webapp: "https://www.npmjs.com/package/cmtk-email-validator",
+      webapp: "https://mysizer.app/",
     },
     {
       id: 4,
@@ -216,8 +214,7 @@ export const SkillsInfo = [
         "A Chrome extension that provides users with quick access to the MySizer clothing size recommendation system. It allows users to find their perfect fit without leaving their current browsing context.",
       image: taskremLogo,
       tags: ["JavaScript", "Chrome Extension", "Reactjs"],
-      github: "https://github.com/codingmastr/Task-Reminder-Tool",
-      webapp: "chrome://extensions/?id=kngheeibjnnidhfoomkpnbeghackheci",
+      webapp: "https://chromewebstore.google.com/detail/mysizer-size-calculator-f/hmjncaebpnndembgoklkhgebhpdebmhd",
     },
     {
       id: 5,
@@ -225,9 +222,8 @@ export const SkillsInfo = [
       description:
         "A productivity app designed to help users manage their time effectively. It features task scheduling, reminders, and a user-friendly interface to enhance focus and productivity.",
       image: webverLogo,
-      tags: ["ReactNative", "Firebase", "UI/UX"],
-      github: "https://github.com/codingmastr/Webverse-Digital",
-      webapp: "https://webversedigital.com/",
+      tags: ["ReactNative", "Firebase", "UI/UX", "Productivity"],
+      webapp: "https://procast.space/",
     },
     {
       id: 6,
@@ -236,8 +232,7 @@ export const SkillsInfo = [
         "Interactive learning management system designed to provide a seamless educational experience. Built with React JS, Firebase cloud functions, Redux, PostgreSQL. it offers features like course creation, user management, and payment integration.",
       image: cmLogo,
       tags: ["React JS", "Firebase", "Cloud Functions","Payment Integration"],
-      github: "https://codingmasterweb.in/",
-      webapp: "https://codingmasterweb.in/",
+      webapp: "https://l3arn.org/",
     },
     {
       id: 7,
@@ -246,8 +241,7 @@ export const SkillsInfo = [
         "An engaging palm reading app that provides users with insights based on their palm lines. Built with expo ReactNative, it offers a user-friendly interface and an interactive experience for users interested in palmistry.",
       image: imagesearchLogo,
       tags: ["ReactNative", "Expo", "Palmistry", "Firebase"],
-      github: "https://github.com/codingmastr/Image-Search-App",
-      webapp: "https://imagsearch.netlify.app/",
+      webapp: "https://play.google.com/store/apps/details?id=com.kakushin.readmypalm",
     },
     {
       id: 8,
@@ -257,6 +251,6 @@ export const SkillsInfo = [
       image: removebgLogo,
       tags: ["ReactNative", "Expo", "Tea Leaf Reading", "Firebase"],
       github: "https://github.com/codingmastr/Image-Background-Remover",
-      webapp: "https://removeyourbg.netlify.app/",
+      webapp: "https://play.google.com/store/apps/details?id=com.kakushin.coffee",
     },
   ];  
