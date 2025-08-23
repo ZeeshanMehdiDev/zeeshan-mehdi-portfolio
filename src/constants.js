@@ -40,6 +40,7 @@ import kakushinLogo from './assets/company_logo/kakushin.png';
 // Education Section Logo's
 import vuLogo from './assets/education_logo/vu_logo.png';
 import bsaLogo from './assets/education_logo/bsa_logo.png';
+import matricLogo from './assets/education_logo/gla_logo.png';
 
 // Project Section Logo's
 import githubdetLogo from './assets/work_logo/github_det.png';
@@ -161,7 +162,7 @@ export const SkillsInfo = [
       school: "Virtual University of Pakistan",
       date: "Sept 2023 - Present",
       grade: "2.31 CGPA",
-      desc: "The BS CS program at the Virtual University of Pakistan is a four-year undergraduate degree focusing on computer science. It offers a comprehensive curriculum covering subjects such as programming, data structures, algorithms, networking, software engineering, and more. The program is delivered through an online learning platform, providing flexibility for students to study at their own pace. Assessments and exams are conducted to evaluate understanding, and graduates can pursue careers in various fields including software development, web development, cybersecurity, and research.",
+      desc: "The BS CS program at the Virtual University of Pakistan is a four-year undergraduate degree focusing on computer science. It offers a comprehensive curriculum covering subjects such as programming, data structures, algorithms, networking, software engineering, and more. The program is delivered through an online learning platform, providing flexibility for students to study at your own pace. Assessments and exams are conducted to evaluate understanding, and graduates can pursue careers in various fields including software development, web development, cybersecurity, and research.",
       degree: "Bachelor of Computer Science - BScs (Computer Science)",
     },
     {
@@ -172,6 +173,15 @@ export const SkillsInfo = [
       grade: "84.6%",
       desc: "I completed my class 12 education from Government Post Graduate College, Fateh Pur Layyah, under the DG Khan board, where I studied Physics, Chemistry, and Mathematics (PCM).",
       degree: "Faculty of Science - FSC",
+    },
+    {
+      id: 2,
+      img: matricLogo, // Using existing logo as placeholder
+      school: "Government High School Pakki Shah Mardan",
+      date: "2018 - 2020",
+      grade: "981/1100",
+      desc: "I completed my Matric (Science) education from Government High School Pakki Shah Mardan under the Sargodha Board. This foundational education in science subjects laid the groundwork for my future studies in computer science and technology.",
+      degree: "Matriculation (Science)",
     }
   ];
   

@@ -3,6 +3,7 @@ import { projects } from "../../constants";
 
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [activeFilter, setActiveFilter] = useState("All");
 
   const handleOpenModal = (project) => {
     setSelectedProject(project);
@@ -12,113 +13,216 @@ const Work = () => {
     setSelectedProject(null);
   };
 
+  // Filter categories - only show All and Medusa JS
+  const uniqueCategories = ["All", "Medusa JS"];
+
+  // Filter projects based on selected category
+  const filteredProjects = activeFilter === "All" 
+    ? projects 
+    : projects.filter(project => project.tags.some(tag => 
+        tag.toLowerCase().includes('medusa') || 
+        tag.toLowerCase().includes('medusajs')
+      ));
+
   return (
     <section
       id="work"
-      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[20vw] font-sans relative"
+      className="py-24 px-[7vw] md:px-[7vw] lg:px-[16vw] font-sans relative"
     >
-      {/* Section Title */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-white">PROJECTS</h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold">
-          A showcase of the projects I have worked on, highlighting my skills
-          and experience in various technologies
+      {/* Section Header */}
+      <div className="text-center mb-20">
+        <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          Featured Projects
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-[#8245ec] to-[#a855f7] mx-auto mb-6"></div>
+        <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          A showcase of my technical expertise through diverse projects, 
+          demonstrating problem-solving skills and innovative solutions
         </p>
       </div>
 
+      {/* Filter Categories */}
+      <div className="flex flex-wrap justify-center gap-3 mb-16">
+        {uniqueCategories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setActiveFilter(category)}
+            className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+              activeFilter === category
+                ? "bg-gradient-to-r from-[#8245ec] to-[#a855f7] text-white shadow-lg shadow-[#8245ec]/25"
+                : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-white border border-gray-700"
+            }`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
       {/* Projects Grid */}
-      <div className="grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
+      <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {filteredProjects.map((project) => (
           <div
             key={project.id}
-            onClick={() => handleOpenModal(project)}
-            className="border border-white bg-gray-900 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden cursor-pointer hover:shadow-purple-500/50 hover:-translate-y-2 transition-transform duration-300"
+            className="group relative bg-gray-900/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-800 hover:border-[#8245ec]/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(130,69,236,0.2)] hover:-translate-y-2"
           >
-            <div className="p-4">
+            {/* Project Image */}
+            <div className="relative overflow-hidden">
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover rounded-xl"
+                className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
               />
+              {/* Overlay with project type indicator */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute top-4 right-4">
+                <span className="px-3 py-1 bg-[#8245ec] text-white text-xs font-semibold rounded-full">
+                  {project.tags.includes('ReactNative') ? 'Mobile App' : 'Web App'}
+                </span>
+              </div>
             </div>
+
+            {/* Project Content */}
             <div className="p-6">
-              <h3 className="text-2xl font-bold text-white mb-2">
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#8245ec] transition-colors duration-300">
                 {project.title}
               </h3>
-              <p className="text-gray-500 mb-4 pt-4 line-clamp-3">
+              <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
                 {project.description}
               </p>
-              <div className="mb-4">
-                {project.tags.map((tag, index) => (
+
+              {/* Project Tags */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.tags.slice(0, 4).map((tag, index) => (
                   <span
                     key={index}
-                    className="inline-block bg-[#251f38] text-xs font-semibold text-purple-500 rounded-full px-2 py-1 mr-2 mb-2"
+                    className="px-3 py-1 bg-gray-800/60 text-[#8245ec] text-xs font-medium rounded-lg border border-gray-700"
                   >
                     {tag}
                   </span>
                 ))}
+                {project.tags.length > 4 && (
+                  <span className="px-3 py-1 bg-gray-800/60 text-gray-500 text-xs font-medium rounded-lg border border-gray-700">
+                    +{project.tags.length - 4} more
+                  </span>
+                )}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-3">
+                <button
+                  onClick={() => handleOpenModal(project)}
+                  className="flex-1 bg-gray-800/60 hover:bg-[#8245ec] text-gray-300 hover:text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 border border-gray-700 hover:border-[#8245ec]"
+                >
+                  View Details
+                </button>
+                {project.webapp && (
+                  <a
+                    href={project.webapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-gradient-to-r from-[#8245ec] to-[#a855f7] text-white rounded-lg font-medium hover:shadow-lg hover:shadow-[#8245ec]/25 transition-all duration-300"
+                  >
+                    Live Demo
+                  </a>
+                )}
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Modal Container */}
-      {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4">
-          <div className="bg-gray-900 rounded-xl shadow-2xl lg:w-full w-[90%] max-w-3xl overflow-hidden relative">
-            <div className="flex justify-end p-4">
-              <button
-                onClick={handleCloseModal}
-                className="text-white text-3xl font-bold hover:text-purple-500"
-              >
-                &times;
-              </button>
-            </div>
+      {/* No Projects Message */}
+      {filteredProjects.length === 0 && (
+        <div className="text-center py-16">
+          <div className="text-gray-500 text-lg">
+            No projects found for "{activeFilter}". Try selecting a different category.
+          </div>
+        </div>
+      )}
 
-            <div className="flex flex-col">
-              <div className="w-full flex justify-center bg-gray-900 px-4">
+      {/* Project Modal */}
+      {selectedProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4">
+          <div className="bg-gray-900 rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative">
+            {/* Close Button */}
+            <button
+              onClick={handleCloseModal}
+              className="absolute top-4 right-4 z-10 w-10 h-10 bg-gray-800/80 hover:bg-gray-700 rounded-full flex items-center justify-center text-white text-xl font-bold hover:text-[#8245ec] transition-colors duration-300"
+            >
+              ×
+            </button>
+
+            {/* Modal Content */}
+            <div className="relative">
+              {/* Project Image */}
+              <div className="relative h-80 bg-gray-800">
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
-                  className="lg:w-full w-[95%] object-contain rounded-xl shadow-2xl"
+                  className="w-full h-full object-cover"
                 />
-              </div>
-              <div className="lg:p-8 p-6">
-                <h3 className="lg:text-3xl font-bold text-white mb-4 text-md">
-                  {selectedProject.title}
-                </h3>
-                <p className="text-gray-400 mb-6 lg:text-base text-xs">
-                  {selectedProject.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {selectedProject.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="bg-[#251f38] text-xs font-semibold text-purple-500 rounded-full px-2 py-1"
-                    >
-                      {tag}
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
+                <div className="absolute bottom-6 left-6">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                    {selectedProject.title}
+                  </h2>
+                  <div className="flex items-center space-x-3">
+                    <span className="px-3 py-1 bg-[#8245ec] text-white text-sm font-semibold rounded-full">
+                      {selectedProject.tags.includes('ReactNative') ? 'Mobile App' : 'Web App'}
                     </span>
-                  ))}
+                  </div>
                 </div>
-                <div className="flex gap-4">
-                  <a
-                    href={selectedProject.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-1/2 bg-gray-800 hover:bg-purple-800 text-gray-400 lg:px-6 lg:py-2 px-2 py-1 rounded-xl lg:text-xl text-sm font-semibold text-center"
+              </div>
+
+              {/* Project Details */}
+              <div className="p-8">
+                {/* Description */}
+                <div className="mb-8">
+                  <h3 className="text-xl font-semibold text-white mb-4 flex items-center">
+                    <span className="w-2 h-2 bg-[#8245ec] rounded-full mr-3"></span>
+                    Project Overview
+                  </h3>
+                  <p className="text-gray-300 text-lg leading-relaxed">
+                    {selectedProject.description}
+                  </p>
+                </div>
+
+                {/* Technologies */}
+                <div className="mb-8">
+                  <h3 className="text-xl font-semibold text-white mb-4 flex items-center">
+                    <span className="w-2 h-2 bg-[#8245ec] rounded-full mr-3"></span>
+                    Technologies Used
+                  </h3>
+                  <div className="flex flex-wrap gap-3">
+                    {selectedProject.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="px-4 py-2 bg-gray-800/60 text-[#8245ec] text-sm font-medium rounded-lg border border-gray-700"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  {selectedProject.webapp && (
+                    <a
+                      href={selectedProject.webapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-gradient-to-r from-[#8245ec] to-[#a855f7] text-white py-3 px-6 rounded-lg font-semibold text-center hover:shadow-lg hover:shadow-[#8245ec]/25 transition-all duration-300"
+                    >
+                      🚀 View Live Demo
+                    </a>
+                  )}
+                  <button
+                    onClick={handleCloseModal}
+                    className="flex-1 bg-gray-800/60 hover:bg-gray-700 text-gray-300 hover:text-white py-3 px-6 rounded-lg font-semibold border border-gray-700 transition-all duration-300"
                   >
-                    View Code
-                  </a>
-                  <a
-                    href={selectedProject.webapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-1/2 bg-purple-600 hover:bg-purple-800 text-white lg:px-6 lg:py-2 px-2 py-1 rounded-xl lg:text-xl text-sm font-semibold text-center"
-                  >
-                    View Live
-                  </a>
+                    Close
+                  </button>
                 </div>
               </div>
             </div>
