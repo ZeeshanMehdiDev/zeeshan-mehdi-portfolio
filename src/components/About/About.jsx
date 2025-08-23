@@ -7,17 +7,17 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-4 px-[7vw] md:px-[7vw] lg:px-[20vw] font-sans mt-16 md:mt-24 lg:mt-32"
+      className="py-4 px-[7vw] md:px-[7vw] lg:px-[20vw] font-sans mt-16 md:mt-2"
     >
       <div className="flex flex-col-reverse md:flex-row justify-between items-center">
         {/* Left Side */}
         <div className="md:w-1/2 text-center md:text-left mt-8 md:mt-0">
           {/* Greeting */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 leading-tight">
+          <h1 className="text-3xl font-bold text-white mb-2 leading-tight">
             Hi, I am
           </h1>
           {/* Name */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
+          <h2 className="text-4xl font-bold text-white mb-4 leading-tight">
             Medusa.js Full-Stack Software Developer 
           </h2>
           {/* Skills Heading with Typing Effect */}
@@ -42,13 +42,35 @@ const About = () => {
             />
           </h3>
           {/* About Me Paragraph */}
-          <p className="text-base sm:text-lg md:text-lg text-gray-400 mb-10 mt-8 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-lg text-gray-400 mb-4 mt-8 leading-relaxed">
             I am Medusa.js Full-Stack Software Developer with over 3 years of experience in
             building scalable web applications. Skilled in both front-end and
             back-end development, I specialize in the MERN stack, android development, and other
             modern technologies such as Medusajs 2.0 to create seamless user experiences and
             efficient solutions.
           </p>
+          
+          {/* Contact Information */}
+          <div className="mb-4 text-center md:text-left">
+            <div className="inline-flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg px-4 py-3">
+              <svg 
+                className="w-5 h-5 text-[#8245ec]" 
+                fill="currentColor" 
+                viewBox="0 0 20 20"
+              >
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+              </svg>
+              <span className="text-gray-300 font-medium">Contact:</span>
+              <a 
+                href="mailto:zeeshanmehdi.dev@gmail.com" 
+                className="text-[#8245ec] hover:text-[#a855f7] transition-colors duration-300 font-semibold"
+              >
+                zeeshanmehdi.dev@gmail.com
+              </a>
+            </div>
+          </div>
+          
           {/* Resume Button */}
           <a
             href="https://drive.google.com/file/d/1zLGhma4DYIhZRpBZAAi2hjyueRJSOiBX/view?usp=drive_link"

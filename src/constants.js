@@ -4,6 +4,7 @@ import cssLogo from './assets/tech_logo/css.png';
 import sassLogo from './assets/tech_logo/sass.png';
 import javascriptLogo from './assets/tech_logo/javascript.png';
 import reactjsLogo from './assets/tech_logo/reactjs.png';
+import reactnativeLogo from './assets/tech_logo/reactjs.png'; // Using React logo for React Native
 import angularLogo from './assets/tech_logo/angular.png';
 import reduxLogo from './assets/tech_logo/redux.png';
 import nextjsLogo from './assets/tech_logo/nextjs.png';
@@ -20,6 +21,7 @@ import cLogo from './assets/tech_logo/c.png';
 import cppLogo from './assets/tech_logo/cpp.png';
 import pythonLogo from './assets/tech_logo/python.png';
 import typescriptLogo from './assets/tech_logo/typescript.png';
+import kotlinLogo from './assets/tech_logo/kotlin.png'; // You'll need to add this logo
 import gitLogo from './assets/tech_logo/git.png';
 import githubLogo from './assets/tech_logo/github.png';
 import vscodeLogo from './assets/tech_logo/vscode.png';
@@ -30,6 +32,7 @@ import netlifyLogo from './assets/tech_logo/netlify.png';
 import vercelLogo from './assets/tech_logo/vercel.png';
 import postgreLogo from './assets/tech_logo/postgre.png';
 import fiverrLogo from './assets/tech_logo/fiverr.png';
+import flutterflowLogo from './assets/tech_logo/flutterflow.png'; // You'll need to add this logo
 
 // Experience Section Logo's
 import kakushinLogo from './assets/company_logo/kakushin.png';
@@ -57,6 +60,7 @@ export const SkillsInfo = [
       { name: 'Next JS', logo: nextjsLogo },
       { name: 'JavaScript', logo: javascriptLogo },
       { name: 'React JS', logo: reactjsLogo },
+      { name: 'React Native', logo: reactnativeLogo },
       { name: 'Tailwind CSS', logo: tailwindcssLogo },
       { name: 'SASS', logo: sassLogo },
       { name: 'Angular', logo: angularLogo },
@@ -85,6 +89,7 @@ export const SkillsInfo = [
       { name: 'TypeScript', logo: typescriptLogo },
       { name: 'JavaScript', logo: javascriptLogo },
       { name: 'Python', logo: pythonLogo },
+      { name: 'Kotlin', logo: kotlinLogo },
       { name: 'C', logo: cLogo },
       { name: 'C++', logo: cppLogo },
     ],
@@ -100,6 +105,7 @@ export const SkillsInfo = [
       { name: 'Compass', logo: mcLogo },
       { name: 'Vercel', logo: vercelLogo },
       { name: 'Netlify', logo: netlifyLogo },
+      { name: 'FlutterFlow', logo: flutterflowLogo },
     ],
   },
 ];
