@@ -43,9 +43,9 @@ const Education = () => {
                 <div className="relative z-10">
                   {/* Header Section */}
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-8">
-                    <div className="space-x-6 mb-6 md:mb-0">
+                    <div className="mb-6 md:mb-0">
                       {/* Institution Logo */}
-                      <div className="w-20 h-20 bg-white rounded-xl p-3 shadow-lg flex-shrink-0">
+                      <div className="w-20 h-20 bg-white rounded-xl p-3 shadow-lg flex-shrink-0 leading-tight">
                         <img
                           src={edu.img}
                           alt={edu.school}
@@ -54,7 +54,6 @@ const Education = () => {
                       </div>
                       
                       {/* Degree and Institution Info */}
-                      <div className="">
                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight">
                           {edu.degree}
                         </h3>
@@ -72,7 +71,6 @@ const Education = () => {
                           <span className="w-2 h-2 bg-[#8245ec] rounded-full mr-2"></span>
                           <span className="font-semibold">Grade: {edu.grade}</span>
                         </div>
-                      </div>
                     </div>
                   </div>
 
