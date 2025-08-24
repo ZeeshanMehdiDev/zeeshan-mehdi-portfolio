@@ -13,8 +13,8 @@ const Work = () => {
     setSelectedProject(null);
   };
 
-  // Filter categories - All, Medusa JS, Mobile App, Web App
-  const uniqueCategories = ["All", "Medusa JS", "Mobile App", "Web App"];
+  // Filter categories - All, Medusa JS, Mobile App
+  const uniqueCategories = ["All", "Medusa JS", "Mobile App"];
 
   // Filter projects based on selected category
   const filteredProjects = (() => {
@@ -31,15 +31,6 @@ const Work = () => {
       case "Mobile App":
         return projects.filter(project => 
           project.tags.some(tag =>
-            tag.toLowerCase().includes('reactnative') ||
-            tag.toLowerCase().includes('kotlin') ||
-            tag.toLowerCase().includes('android') ||
-            tag.toLowerCase().includes('expo')
-          )
-        );
-      case "Web App":
-        return projects.filter(project => 
-          !project.tags.some(tag =>
             tag.toLowerCase().includes('reactnative') ||
             tag.toLowerCase().includes('kotlin') ||
             tag.toLowerCase().includes('android') ||
