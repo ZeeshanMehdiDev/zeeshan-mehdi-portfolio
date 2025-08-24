@@ -9,7 +9,7 @@ const BlurBlob = ({ position, size }) => {
 
   return (
     <div
-      className="absolute"
+      className="absolute pointer-events-none"
       style={{
         top: top,
         left: left,
@@ -19,7 +19,7 @@ const BlurBlob = ({ position, size }) => {
       }}
     >
       <div
-        className="w-full h-full bg-purple-500 rounded-full opacity-20 blur-3xl animate-blob"
+        className="w-full h-full bg-purple-500 rounded-full opacity-10 animate-blob"
       ></div>
     </div>
   );

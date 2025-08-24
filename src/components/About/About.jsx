@@ -52,7 +52,7 @@ const About = () => {
           
           {/* Contact Information */}
           <div className="mb-4 text-center md:text-left">
-            <div className="inline-flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg px-4 py-3">
+            <div className="inline-flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg px-0 md:px-4 py-3">
               <svg 
                 className="w-5 h-5 text-[#8245ec]" 
                 fill="currentColor" 

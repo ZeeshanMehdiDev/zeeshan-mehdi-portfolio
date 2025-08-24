@@ -43,7 +43,7 @@ const Education = () => {
                 <div className="relative z-10">
                   {/* Header Section */}
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-8">
-                    <div className="flex items-start space-x-6 mb-6 md:mb-0">
+                    <div className="space-x-6 mb-6 md:mb-0">
                       {/* Institution Logo */}
                       <div className="w-20 h-20 bg-white rounded-xl p-3 shadow-lg flex-shrink-0">
                         <img
@@ -54,7 +54,7 @@ const Education = () => {
                       </div>
                       
                       {/* Degree and Institution Info */}
-                      <div className="flex-1">
+                      <div className="">
                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight">
                           {edu.degree}
                         </h3>
