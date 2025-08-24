@@ -13,16 +13,43 @@ const Work = () => {
     setSelectedProject(null);
   };
 
-  // Filter categories - only show All and Medusa JS
-  const uniqueCategories = ["All", "Medusa JS"];
+  // Filter categories - All, Medusa JS, Mobile App, Web App
+  const uniqueCategories = ["All", "Medusa JS", "Mobile App", "Web App"];
 
   // Filter projects based on selected category
-  const filteredProjects = activeFilter === "All" 
-    ? projects 
-    : projects.filter(project => project.tags.some(tag => 
-        tag.toLowerCase().includes('medusa') || 
-        tag.toLowerCase().includes('medusajs')
-      ));
+  const filteredProjects = (() => {
+    switch (activeFilter) {
+      case "All":
+        return projects;
+      case "Medusa JS":
+        return projects.filter(project => 
+          project.tags.some(tag =>
+            tag.toLowerCase().includes('medusa') ||
+            tag.toLowerCase().includes('medusajs')
+          )
+        );
+      case "Mobile App":
+        return projects.filter(project => 
+          project.tags.some(tag =>
+            tag.toLowerCase().includes('reactnative') ||
+            tag.toLowerCase().includes('kotlin') ||
+            tag.toLowerCase().includes('android') ||
+            tag.toLowerCase().includes('expo')
+          )
+        );
+      case "Web App":
+        return projects.filter(project => 
+          !project.tags.some(tag =>
+            tag.toLowerCase().includes('reactnative') ||
+            tag.toLowerCase().includes('kotlin') ||
+            tag.toLowerCase().includes('android') ||
+            tag.toLowerCase().includes('expo')
+          )
+        );
+      default:
+        return projects;
+    }
+  })();
 
   return (
     <section
@@ -36,7 +63,7 @@ const Work = () => {
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-[#8245ec] to-[#a855f7] mx-auto mb-6"></div>
         <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-          A showcase of my technical expertise through diverse projects, 
+          A showcase of my technical expertise through diverse projects,
           demonstrating problem-solving skills and innovative solutions
         </p>
       </div>
@@ -47,11 +74,10 @@ const Work = () => {
           <button
             key={category}
             onClick={() => setActiveFilter(category)}
-            className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-              activeFilter === category
+            className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeFilter === category
                 ? "bg-gradient-to-r from-[#8245ec] to-[#a855f7] text-white shadow-lg shadow-[#8245ec]/25"
                 : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-white border border-gray-700"
-            }`}
+              }`}
           >
             {category}
           </button>
@@ -76,7 +102,7 @@ const Work = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute top-4 right-4">
                 <span className="px-3 py-1 bg-[#8245ec] text-white text-xs font-semibold rounded-full">
-                  {project.tags.includes('ReactNative') ? 'Mobile App' : 'Web App'}
+                  {project.tags.includes('ReactNative') || project.tags.includes('Kotlin') ? 'Mobile App' : 'Web App'}
                 </span>
               </div>
             </div>
